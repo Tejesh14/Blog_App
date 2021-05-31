@@ -1,0 +1,24 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %> 
+    <div class="back-navbar">
+        <a href="/blogs" class="btn btn-primary">Back</a>
+    </div>
+    <%- include('../partials/flash') %> 
+    <h1>Login</h1>
+
+    <div class="form-container">
+        <form action="/login" class="needs-validation" method="POST" novalidate>
+            <div class="form-floating sm-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Enter Username" name="username" required>
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating sm-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Enter Password" name="password" required>
+                <label for="floatingPassword">Password</label>
+            </div>
+            <button class="btn">Login</button>
+            <a href="/register" class="btn">Register New Account</a>
+        </form>
+    </div>
+
+<%- include('../partials/footer') %> 

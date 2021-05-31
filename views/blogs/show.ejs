@@ -1,0 +1,23 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %> 
+    <div class="back-navbar">
+        <a href="/" class="btn btn-primary">Back</a>
+    </div>
+    <%- include('../partials/flash') %> 
+    <h1>All Blogs</h1>
+
+    <div class="main-container">
+        <%for(let ch of blogs){%>
+            <div class="show-container">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Title:</strong> <%= ch.title %></h5>
+                </div>
+                <img src="<%= ch.img %>" class="card-img-bottom" alt="..."><br>
+                <h5 class="card-title"><strong>Author:</strong> <%= ch.author %></h5>
+                <p class="card-text"><%= ch.content.substring(0,100) %>...</p>
+                <a href="/blogs/<%= ch._id %> " class="btn btn-primary">View</a>
+            </div>
+        <%}%>
+    </div>
+<%- include('../partials/footer') %> 
+

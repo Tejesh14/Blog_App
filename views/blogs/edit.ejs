@@ -1,0 +1,30 @@
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %> 
+    <div class="back-navbar">
+        <a href="/blogs/<%= blogData._id %> " class="btn btn-primary">Back</a>
+    </div>
+    <h1>Edit Blog</h1>
+
+    <div class="form-container">
+        <form action="/blogs/<%= blogData._id %>?_method=PATCH " class="needs-validation" method="POST" novalidate>
+            <div class="form-floating sm-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Tejesh Bharadwaj" name="author" value="<%= blogData.author %> " disabled>
+                <label for="floatingInput">Author Name</label>
+            </div>
+            <div class="form-floating sm-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Travel Blog" name="title" value="<%= blogData.title %> " required>
+                <label for="floatingInput">Blog Title</label>
+            </div>
+            <div class="form-floating sm-3">
+                <input type="url" class="form-control" id="floatingPassword" placeholder="https://www.unsplash.com" name="img" value="<%= blogData.img %>" required>
+                <label for="floatingPassword">Image URL</label>
+            </div>
+            <div class="form-floating sm-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 250px" name="content" required><%= blogData.content %></textarea>
+                <!-- <label for="floatingTextarea2">Content</label> -->
+            </div>
+            <button class="btn">Update</button>
+        </form>
+    </div>
+
+<%- include('../partials/footer') %> 
